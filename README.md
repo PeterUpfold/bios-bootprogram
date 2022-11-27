@@ -1,6 +1,6 @@
 # bios-bootprogram
 
-A "Hello World" boot sector program for DOS.
+A "Hello World" boot sector program for the BIOS.
 
 ## Acknowledgements
 
