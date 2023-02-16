@@ -15,5 +15,6 @@ Launch `gdb`
 There are no symbols at this time, but we can perhaps exploit the fact that all instructions are loaded at known addresses to set breakpoints.
 
 The bootloader is loaded into memory at 0x7C00. To break at our first instruction:
-     b *0x7c00
+
+    b *0x7c00
 
