@@ -54,8 +54,11 @@ read_char:
     int 0x16 ; 
     ; ah now contains the scan code, al contains the ascii character
     cmp al, 0x0
+    jz skip_call_write_char
     call write_char
+    skip_call_write_char:
     ret
+
 
 times 510-($-$$) db 0 ; padding
 
