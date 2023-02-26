@@ -1,6 +1,8 @@
+[bits 16]
+[org 0x7c00]
 start:
 
-lea ax, str_helloworld
+mov ax, str_helloworld
 call write_string
 jmp $
 
@@ -37,7 +39,7 @@ read_char:
     skip_call_write_char:
     ret
 
-str_helloworld db 'Hello world', 0x0A, 0x0D, 0
+str_helloworld: db 'Hello world', 0x0A, 0x0D, 0
 
 
 

@@ -3,12 +3,11 @@
 Reference: https://www.qemu.org/docs/master/system/gdb.html
 
 Add `-s` and `-S` to the `Makefile` qemu target:
-    $ qemu-system-x86_64 -s -S bootloader.img -serial stdio
+    $ qemu-system-i386 -s -S bootloader.img -serial stdio
 
-Launch `gdb`
+Launch `gdb` (h/t https://stackoverflow.com/questions/28811811/how-to-use-gdb-in-16-bit-mode)
 
-    $ gdb
-    (gdb) target remote localhost:1234
+    $ gdb -ex 'target remote localhost:1234' -ex 'set architecture i8086' -ex 'break *0x7c00' -ex 'continue'
 
 ## Challenges
 
